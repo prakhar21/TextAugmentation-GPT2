@@ -1,4 +1,5 @@
 # TextAugmentation-GPT2
+![GPT2 model size representation](https://github.com/prakhar21/TextAugmentation-GPT2/blob/master/gpt2-sizes.png)
 Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can be used for Text Augmentation.
 
 ## Getting Started
