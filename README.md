@@ -15,6 +15,9 @@ Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can 
 ```
 1. python3 generate.py --model_name <model_name> --sentences <number_of_sentences> --label <class_of_training_data>
 ```
+
+* It is recommended that you tune the parameters for your task. Not doing so may result in choosing default parameters and eventually giving sub-optimal performace.
+
 ## Quick Testing
 I had fine-tuned the model on __SPAM/HAM dataset__. You can download it from [here](https://drive.google.com/open?id=1lDMFdcSsmWuzHIW8ceEgDnuJHzxX8Hiw) and follow the steps mentioned under __Generation Text__ section.
 
