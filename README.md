@@ -5,7 +5,7 @@ Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can 
 ## Getting Started
 1. git clone https://github.com/prakhar21/TextAugmentation-GPT2.git
 2. Move your data to __data/ dir__.
-* Please refer to data/SMSSpamCollection to get the idea of file format.
+_* Please refer to data/SMSSpamCollection to get the idea of file format._
 
 ## Tuning for own Corpus
 1. Assuming are done with Point 2 under __Getting Started__
@@ -17,7 +17,7 @@ Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can 
 1. python3 generate.py --model_name <model_name> --sentences <number_of_sentences> --label <class_of_training_data>
 ```
 
-* It is recommended that you tune the parameters for your task. Not doing so may result in choosing default parameters and eventually giving sub-optimal performace.
+_* It is recommended that you tune the parameters for your task. Not doing so may result in choosing default parameters and eventually giving sub-optimal performace._
 
 ## Quick Testing
 I had fine-tuned the model on __SPAM/HAM dataset__. You can download it from [here](https://drive.google.com/open?id=1lDMFdcSsmWuzHIW8ceEgDnuJHzxX8Hiw) and follow the steps mentioned under __Generation Text__ section.
