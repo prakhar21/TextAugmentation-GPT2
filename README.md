@@ -43,3 +43,5 @@ __Note:__ First time you run, it will take considerable amount of time because o
 2. Fine-tunes the gpt2 with your dataset _(Depends on size of the data, Epochs, Hyperparameters, etc)_
 
 All the experiments were done on [IntelDevCloud Machines](https://software.intel.com/en-us/devcloud)
+
+Will soon be updating the documentation! Please raise in issue section for any discrepancy.
