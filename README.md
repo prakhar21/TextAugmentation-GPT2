@@ -5,6 +5,7 @@ Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can 
 ## Getting Started
 1. git clone https://github.com/prakhar21/TextAugmentation-GPT2.git
 2. Move your data to __data/ dir__.
+* Please refer to data/SMSSpamCollection to get the idea of file format.
 
 ## Tuning for own Corpus
 1. Assuming are done with Point 2 under __Getting Started__
