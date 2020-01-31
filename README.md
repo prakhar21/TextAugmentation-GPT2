@@ -11,6 +11,11 @@ Fine-tuned pre-trained GPT2 for topic specific text generation. Such system can 
 ```
 2. Run python3 train.py --data_file <filename> --epoch <nunber_of_epochs> --warmup <warmup_steps> --model_name <model_name>
 ```
+## Generating Text
+1. 
+
+## Quick Testing
+I had fine-tuned the model on __SPAM/HAM dataset__. You can download it from [here](https://drive.google.com/open?id=1lDMFdcSsmWuzHIW8ceEgDnuJHzxX8Hiw) and follow the steps mentioned under __Generation Text__ section.
 
 __Note:__ First time you run, it will take considerable amount of time because of the following reasons - 
 1. Downloads pre-trained gpt2-medium model  _(Depends on your Network Speed)_
