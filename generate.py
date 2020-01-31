@@ -9,6 +9,26 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
+def choose_from_top_k_top_n(probs, k=50, p=0.8):
+	ind = np.argpartition(probs, -k)[-k:]
+	top_prob = probs[ind]
+	top_prob = {i: top_prob[idx] for idx,i in enumerate(ind)}
+	sorted_top_prob = {k: v for k, v in sorted(top_prob.items(), key=lambda item: item[1], reverse=True)}
+	
+	t=0
+	f=[]
+	pr = []
+	for k,v in sorted_top_prob.items():
+	  t+=v
+	  f.append(k)
+	  pr.append(v)
+	  if t>=p:
+		break
+	top_prob = pr / np.sum(pr)
+	token_id = np.random.choice(f, 1, p = top_prob)
+
+	return int(token_id)
+
 def generate(tokenizer, model, sentences, label):
 	with torch.no_grad():
 	  for idx in range(sentences):
@@ -40,26 +60,6 @@ def generate(tokenizer, model, sentences, label):
 			  output_list = list(cur_ids.squeeze().to('cpu').numpy())
 			  output_text = tokenizer.decode(output_list)
 			  print (output_text)
-
-def choose_from_top_k_top_n(probs, k=50, p=0.8):
-	ind = np.argpartition(probs, -k)[-k:]
-	top_prob = probs[ind]
-	top_prob = {i: top_prob[idx] for idx,i in enumerate(ind)}
-	sorted_top_prob = {k: v for k, v in sorted(top_prob.items(), key=lambda item: item[1], reverse=True)}
-	
-	t=0
-	f=[]
-	pr = []
-	for k,v in sorted_top_prob.items():
-	  t+=v
-	  f.append(k)
-	  pr.append(v)
-	  if t>=p:
-		break
-	top_prob = pr / np.sum(pr)
-	token_id = np.random.choice(f, 1, p = top_prob)
-
-	return int(token_id)
 
 def load_models(model_name):
 	"""
