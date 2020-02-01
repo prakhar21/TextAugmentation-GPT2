@@ -16,23 +16,23 @@ class MyDataset(Dataset):
 	def __init__(self, data_file_name, data_dir='.data/'):
 		super().__init__()
 
-		short_jokes_path = os.path.join(data_dir, data_file_name)
+		data_path = os.path.join(data_dir, data_file_name)
 
-		self.joke_list = []
+		self.data_list = []
 		self.end_of_text_token = " <|endoftext|> "
 		
-		with open(short_jokes_path) as csv_file:
+		with open(data_path) as csv_file:
 			csv_reader = csv.reader(csv_file, delimiter='\t')
 			
 			for row in csv_reader:
-				joke_str = f"{row[0]}: {row[1]}{self.end_of_text_token}"
-				self.joke_list.append(joke_str)
+				data_str = f"{row[0]}: {row[1]}{self.end_of_text_token}"
+				self.data_list.append(data_str)
 		
 	def __len__(self):
-		return len(self.joke_list)
+		return len(self.data_list)
 
 	def __getitem__(self, item):
-		return self.joke_list[item]
+		return self.data_list[item]
 
 def get_data_loader(data_file_name):
 	dataset = MyDataset(data_file_name)
