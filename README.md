@@ -36,6 +36,8 @@ HAM: Ugh I don't want to go to school.. Cuz I can't go to exam..<|endoftext|>
 HAM: K.,k:)where is my laptop?<|endoftext|>
 ```
 
+## Important Points to Note
+* _Top-k and Top-p Sampling_ (Variant of __Nucleus Sampling__) has been used while decoding the sequence word-by-word. You can read more about it [here](https://arxiv.org/pdf/1904.09751.pdf)
 
 
 __Note:__ First time you run, it will take considerable amount of time because of the following reasons - 
