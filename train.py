@@ -1,7 +1,6 @@
-"""
-@uthor: Prakhar Mishra
-"""
+#modified by : Sayantan Basu
 
+import csv
 import os
 import argparse
 import torch
@@ -16,7 +15,7 @@ class MyDataset(Dataset):
 	def __init__(self, data_file_name, data_dir='.data/'):
 		super().__init__()
 
-		data_path = os.path.join(data_dir, data_file_name)
+		data_path = os.path.join(data_file_name)
 
 		self.data_list = []
 		self.end_of_text_token = " <|endoftext|> "
@@ -112,13 +111,13 @@ if __name__ == '__main__':
 	DATA_FILE = args.data_file
 
 	TOKENIZER, MODEL = load_models()
-	LOADER = get_data_loader()
+	LOADER = get_data_loader(DATA_FILE)
 
 	DEVICE = 'cpu'
 	if torch.cuda.is_available():
 		DEVICE = 'cuda'
 
-	model = model.to(device)
+	model = MODEL.to(DEVICE)
 	model.train()
 	optimizer = AdamW(model.parameters(), lr=LEARNING_RATE)
 	scheduler = get_cosine_with_hard_restarts_schedule_with_warmup(optimizer, num_warmup_steps=WARMUP_STEPS, num_training_steps=-1)
