@@ -5,7 +5,6 @@ import os
 import argparse
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
-import numpy as np
 from torch.utils.data import Dataset, DataLoader
 from transformers import AdamW, get_cosine_with_hard_restarts_schedule_with_warmup
 import warnings
