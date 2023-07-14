@@ -10,12 +10,14 @@ _* Please refer to data/SMSSpamCollection to get the idea of file format._
 
 ## Tuning for own Corpus
 1. Assuming are done with Point 2 under __Getting Started__
+2. Run the following command:
 ```
-2. Run python3 train.py --data_file <filename> --epoch <number_of_epochs> --warmup <warmup_steps> --model_name <model_name> --max_len <max_seq_length> --learning_rate <learning_rate> --batch <batch_size>
+python3 train.py --data_file <filename> --epoch <number_of_epochs> --warmup <warmup_steps> --model_name <model_name> --max_len <max_seq_length> --learning_rate <learning_rate> --batch <batch_size>
 ```
 ## Generating Text
+1. Run the following command:
 ```
-1. python3 generate.py --model_name <model_name> --sentences <number_of_sentences> --label <class_of_training_data>
+python3 generate.py --model_name <model_name> --sentences <number_of_sentences> --label <class_of_training_data>
 ```
 
 _* It is recommended that you tune the parameters for your task. Not doing so may result in choosing default parameters and eventually giving sub-optimal performace._
