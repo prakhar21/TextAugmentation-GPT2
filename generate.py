@@ -1,7 +1,6 @@
 """
 @uthor: Prakhar
 """
-import os
 import argparse
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
