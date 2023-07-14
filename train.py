@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 class MyDataset(Dataset):
-	def __init__(self, data_file_name, data_dir='.data/'):
+	def __init__(self, data_file_name):
 		super().__init__()
 
 		data_path = os.path.join(data_file_name)
