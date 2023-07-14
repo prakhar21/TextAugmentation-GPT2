@@ -42,11 +42,6 @@ def generate(tokenizer, model, sentences, label):
 
                 softmax_logits = torch.softmax(logits[0, -1], dim=0)
 
-                if i < 5:
-                    n = 10
-                else:
-                    n = 5
-
                 next_token_id = choose_from_top_k_top_n(softmax_logits.to('cpu').numpy())  # top-k-top-n sampling
                 cur_ids = torch.cat([cur_ids, torch.ones((1, 1)).long().to('cpu') * next_token_id], dim=1)
 
