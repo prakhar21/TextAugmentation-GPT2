@@ -20,7 +20,7 @@ class MyDataset(Dataset):
 		self.data_list = []
 		self.end_of_text_token = " <|endoftext|> "
 		
-		with open(data_path) as csv_file:
+		with open(data_path, "r", encoding="utf-8") as csv_file:
 			csv_reader = csv.reader(csv_file, delimiter='\t')
 			
 			for row in csv_reader:
